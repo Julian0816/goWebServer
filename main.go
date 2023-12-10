@@ -58,7 +58,7 @@ func main() {
    v1Router.Get("/healthz", handlerReadiness) // Connect the handlerReadiness to the "/healthz" path
    v1Router.Get("/err", handlerErr)
    v1Router.Post("/users", apiCfg.handlerCreateUser) // Create User handler
-
+   v1Router.Get("/users", apiCfg.handlerGetUser) // Get User handler
    router.Mount("/v1", v1Router) // nest a v1Router under the v1 path // This is good practive in case you need to make a v2 route
 
  	  
