@@ -1,9 +1,9 @@
 package main
 
 import (
+	"encoding/json"
 	"log"
 	"net/http"
-	"encoding/json"
 )
 
 func respondWithError(w http.ResponseWriter, code int, msg string) {
@@ -15,7 +15,7 @@ func respondWithError(w http.ResponseWriter, code int, msg string) {
 		Error string `json:"error"`
 	}
 
-	respondWithJSON(w, code, errResponse {
+	respondWithJSON(w, code, errResponse{
 		Error: msg,
 	})
 }
